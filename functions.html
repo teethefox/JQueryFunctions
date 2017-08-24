@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="functions.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <ul>
+        <li>
+          <h1>.click</h1>
+          <p id="p1">You just woke up from what seems like a VERY long nap. You have no idea what's going on. Click me to figure out what happened.</p>
+        </li>
+        <li>
+          <h1>.hide</h1>
+          <p class="p2">The psycho you're running from is a killer clown. You pass a PRIME hiding spot. You can either keep running or you can hide.</p>
+          <img class="p2" src="running.gif" alt="Gif of running">
+            <button id="p2button">Click to Hide</button>
+        </li>
+        <li>
+          <h1>.show</h1>
+          <p> Don't victory dance just yet, you picked a terrible hiding spot.</p>
+            <button id="p3button">Turn Around</button>
+            <img id="p3" src="caught1.gif" alt="Got caught">
+        </li>
+        <li>
+          <h1>.toggle</h1>
+          <p>Well,that didn't work; he's right freakin' there. You can give up, or run. </p>
+            <button id="p4button">Click for Olympic Speed</button>
+            <img id="p4" src="run.gif" alt="Run in dark">
+        </li>
+        <li>
+          <h1>.slideDown</h1>
+          <p>There's a really cool button. Maybe that will help, maybe we should push it. Just to see...</p>
+          <div id="p5">
+          <p>Suuuuuuurprise</p>
+          <img src="clown.gif" alt="Scary Clown">
+        </div>
+            <button id="p5button">Click Me</button>
+        </li>
+        <li>
+          <h1>.slideUp</h1>
+          <p id="p6">Click to slam the door in his face!</p>
+            <button id="p6button">Not Today!</button>
+        </li>
+        <li>
+          <h1>.slideToggle</h1>
+          <p id="p7">There is a slide bolt latch on the door. You could lock him in to buy more time.</p>
+          <button id="p7button">Slide and Run!!</button>
+        </li>
+        <li>
+          <h1>.fadeOut</h1>
+          <p id="p8">Since you slammed the door, the light has begun to leave the room. Your vision begins to fade to black
+            <img src="dark.gif" alt="Eye looking around in darkness">
+          </p>
+          <button id="p8button">Look Around for another door</button>
+        </li>
+        <li>
+          <h1>.fadeIn</h1>
+          <p> You found another door! Open it to let the light back in! </p>
+          <img id="p9" src="door.gif" alt="Opening door">
+          <button id="p9button">Let it Shine!</button>
+        </li>
+        <li>
+          <h1>.addClass</h1>
+          <p> Wait, what did you step in while the light was gone? Everything you've touched has turned blue! Now he can track you. You can stop to clean your mess,
+            but you'll run out of time.</p>
+            <button id="p10button">Run, BlueBird, Run!</button>
+        </li>
+        <li>
+          <h1>.before</h1>
+          <p id="p11">OUCH! You hit something, and fall to the floor. But what was it? What was there before? (Click then scroll up)</p>
+            <button id="p11button">Click to see what you tripped on</button>
+        </li>
+        <li>
+          <h1>.after</h1>
+          <p id="p12">You can't just leave the cat there. I'm sure it's friendly</p>
+          <button id="p12button">Pick up the lil' thang</button>
+        </li>
+        <li>
+          <h1 id="p13">.append</h1>
+          <button id="p13button">I Hate Cats</button>
+        </li>
+        <li>
+          <h1>.html</h1>
+          <p>You're super beat at this point. Would it really be so bad if he caught you? You can only die once.</p>
+          <p id="p14"> <img src="hallway.gif" alt="Creepy Hallway"> </p>
+          <button id="p14button">Just Keep Running</button>
+        </li>
+        <li>
+          <h1>.attr</h1>
+          <p>Just a little...bit...longer...</p>
+          <img src="crawling.gif" alt="Pysically exhausted marathon runner">
+        </li>
+
+        <li>
+          <h1>.text</h1>
+          <h3>You see a letter addressed to you hanging on the door</h3>
+          <p id="p17"></p>
+          <button id="p17button">Click to read</button>
+        </li>
+        <li>
+          <h1 id="p16">.val</h1>
+          <p>Tell us how it was here by clicking the button: <input type="text" name="user"></p>
+          <button id="p16button">Maybe not the best experience</button>
+        </li>
+        <li>
+          <h1>.data</h1>
+
+            <button id="p18button2">Click Me</button>
+            <p id="p18">Click for some friendly, helpful advice</p>
+        </li>
+      </ul>
+
+
+  <script>
+  $( '#p1' ).click(function() {
+  alert("There is a psychopath after you. RUN.");
+  });
+  $('#p2button').click(function() {
+  $( '.p2' ).hide( "slow" );
+});
+$("#p3").hide();
+$("#p3button").click(function() {
+  $('#p3').show("slow");
+});
+$("#p4").hide();
+  $( '#p4button').click(function() {
+    $('#p4').toggle();
+});
+$("#p5").hide();
+$('#p5button').click(function() {
+  if ( $( "#p5" ).is( ":hidden" ) ) {
+      $( "#p5" ).slideDown( "slow" );
+    }
+});
+$("#p6button").click(function() {
+  $("#p5").slideUp("fast");
+});
+$("#p7button").click(function() {
+  $("#p7").slideToggle("slow");
+});
+$("#p8button").click(function() {
+  $("#p8").fadeOut("slow");
+});
+$("#p9").hide();
+$("#p9button").click(function() {
+  $("#p9").fadeIn("slow");
+});
+$("#p10button").click(function() {
+  $("p").addClass("blue");
+});
+$("#p11button").click(function() {
+  $("#p4button").before("<img src=cat.gif>");
+  $("#p4").hide();
+});
+$("#p12button").click(function() {
+  $("#p12button").after("<img src=pickup.gif>");
+});
+$("#p13button").click(function() {
+  $("#p13").append("<br>FORGET THAT THING AND GET OUT OF THERE<br>");
+});
+$("#p14button").click(function() {
+  $("#p14").html("Don't think about how creepy this hallway is... keep going!");
+});
+    $("#p15 img").attr("width","500");
+
+    $("#p16button").click(function(){
+        $("input:text").val("ARE YOU INSANE?????");
+
+});
+$("#p17button").click(function(){
+    $("#p17").text("It reads: 'Congratulations! You passed our simulation! Darwin would be very proud.''");
+});
+
+    $("#p18").data("greeting", "Just thank God you're alive and get out of here while you can!");
+$("#p18button2").click(function(){
+    alert($("#p18").data("greeting"));
+});
+
+  </script>
+  </body>
+</html>
